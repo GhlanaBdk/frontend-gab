@@ -1,0 +1,67 @@
+<div class="login-wrapper">
+  <div class="login-card">
+
+    <div class="login-icon">
+      <i class="bi bi-credit-card-2-front"></i>
+    </div>
+    <h2 class="login-title">GAB – Accès sécurisé</h2>
+    <p class="login-subtitle">Veuillez saisir vos informations bancaires</p>
+
+    <!-- ✅ Sélection GAB — style identique aux autres champs -->
+    <div class="form-group">
+      <label>Sélectionner le GAB</label>
+      <div class="input-box">
+        <i class="bi bi-building"></i>
+        @if (loadingGabs) {
+          <span style="color:#aaa; font-size:14px;">Chargement des GABs...</span>
+        } @else {
+          <select [(ngModel)]="selectedGabId">
+            <option [value]="null" disabled>-- Choisir un GAB --</option>
+            @for (gab of gabs; track gab.id) {
+              <option [ngValue]="gab.id">{{ gab.code }} — {{ gab.location }}</option>
+            }
+          </select>
+        }
+      </div>
+    </div>
+
+    <!-- Numéro de carte -->
+    <div class="form-group">
+      <label>Numéro de carte</label>
+      <div class="input-box">
+        <i class="bi bi-credit-card"></i>
+        <input type="text" [(ngModel)]="cardNumber"
+               placeholder="1234 5678 9012 3456"
+               maxlength="16"/>
+      </div>
+    </div>
+
+    <!-- Code PIN -->
+    <div class="form-group">
+      <label>Code PIN</label>
+      <div class="input-box">
+        <i class="bi bi-lock"></i>
+        <input type="password" [(ngModel)]="pin"
+               placeholder="••••"
+               maxlength="4"/>
+      </div>
+    </div>
+
+    <!-- Erreur -->
+    <div class="error-msg" *ngIf="error">
+      <i class="bi bi-exclamation-circle"></i> {{ error }}
+    </div>
+
+    <!-- Bouton -->
+    <button class="btn-valider" (click)="login()" [disabled]="loading || loadingGabs">
+      <span *ngIf="!loading">Valider</span>
+      <span *ngIf="loading">Connexion...</span>
+    </button>
+
+    <p class="secure-note">
+      <i class="bi bi-shield-lock"></i>
+      Vos informations sont sécurisées et cryptées
+    </p>
+
+  </div>
+</div>

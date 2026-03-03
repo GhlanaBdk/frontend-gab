@@ -1,0 +1,72 @@
+<div class="page-wrapper">
+  <div class="page-card">
+    <div class="page-header">
+      <i class="bi bi-clock-history"></i>
+      <h2>Historique des opérations</h2>
+    </div>
+    <div class="page-body">
+
+      @if (error) {
+        <div class="alert-error">
+          <i class="bi bi-exclamation-circle"></i> {{ error }}
+        </div>
+      }
+
+      <div class="info-badge">
+        <i class="bi bi-table"></i>
+        Affichage des 10 dernières opérations
+      </div>
+
+      @if (loading) {
+        <div class="loading-box">
+          <i class="bi bi-hourglass-split"></i> Chargement...
+        </div>
+      }
+
+      @if (!loading) {
+        <div class="transactions-list">
+
+          @if (transactions.length === 0) {
+            <div class="empty-box">
+              <i class="bi bi-inbox"></i>
+              <span>Aucune transaction trouvée</span>
+            </div>
+          }
+
+          @for (tx of transactions; track tx.id) {
+            <div class="tx-row" [class.credit]="isCredit(tx)">
+              <div class="tx-icon" [class.credit-icon]="isCredit(tx)">
+                <i class="bi"
+                   [class.bi-arrow-up]="isCredit(tx)"
+                   [class.bi-arrow-down]="!isCredit(tx)"></i>
+              </div>
+              <div class="tx-info">
+                <strong>{{ getTypeLabel(tx.type) }}</strong>
+                <span>{{ tx.createdAt | date:'dd/MM/yyyy à HH:mm' }}</span>
+                @if (tx.description) {
+                  <span class="tx-desc">{{ tx.description }}</span>
+                }
+              </div>
+              <!-- ✅ Montant en UM -->
+              <div class="tx-amount" [class.credit-amount]="isCredit(tx)">
+                {{ isCredit(tx) ? '+' : '-' }} {{ tx.amount | number:'1.0-0' }} UM
+              </div>
+            </div>
+          }
+
+        </div>
+      }
+
+      <!-- ✅ Solde en UM -->
+      <div class="solde-box">
+        <span>Solde disponible :</span>
+        <strong>{{ solde | number:'1.0-0' }} UM</strong>
+      </div>
+
+      <button class="btn-retour" (click)="retour()">
+        <i class="bi bi-arrow-left"></i> Retour au menu
+      </button>
+
+    </div>
+  </div>
+</div>

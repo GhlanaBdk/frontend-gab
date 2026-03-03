@@ -1,0 +1,71 @@
+<div class="page-wrapper">
+  <div class="page-card">
+    <div class="page-header">
+      <h2>Menu principal</h2>
+      <p>Sélectionnez l'opération souhaitée</p>
+    </div>
+    <div class="page-body">
+
+      <div class="menu-grid">
+
+        <button class="menu-item" routerLink="/withdraw">
+          <div class="menu-icon">
+            <i class="bi bi-arrow-down-circle"></i>
+          </div>
+          <div class="menu-text">
+            <strong>Retrait</strong>
+            <span>Retirer de l'argent</span>
+          </div>
+        </button>
+
+        <button class="menu-item" routerLink="/deposit">
+          <div class="menu-icon deposit-icon">
+            <i class="bi bi-arrow-up-circle"></i>
+          </div>
+          <div class="menu-text">
+            <strong>Dépôt</strong>
+            <span>Déposer de l'argent</span>
+          </div>
+        </button>
+
+        <button class="menu-item" routerLink="/transfer">
+          <div class="menu-icon transfer-icon">
+            <i class="bi bi-arrow-left-right"></i>
+          </div>
+          <div class="menu-text">
+            <strong>Virement</strong>
+            <span>Transférer de l'argent</span>
+          </div>
+        </button>
+
+        <button class="menu-item" routerLink="/history">
+          <div class="menu-icon history-icon">
+            <i class="bi bi-clock-history"></i>
+          </div>
+          <div class="menu-text">
+            <strong>Historique</strong>
+            <span>Consulter vos opérations</span>
+          </div>
+        </button>
+
+        <button class="menu-item" routerLink="/chequebook">
+          <div class="menu-icon cheque-icon">
+            <i class="bi bi-journal-text"></i>
+          </div>
+          <div class="menu-text">
+            <strong>Demande de chéquier</strong>
+            <span>Commander un chéquier</span>
+          </div>
+        </button>
+
+      </div>
+
+      <!-- ✅ Bouton terminer session - style rouge comme demandé -->
+      <button class="btn-logout" (click)="logout()">
+        <i class="bi bi-box-arrow-right"></i>
+        Terminer la session
+      </button>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,143 @@
+/* ===== WRAPPER ===== */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f2f5;
+  padding: 20px;
+}
+
+.page-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
+}
+
+/* ===== HEADER ===== */
+.page-header {
+  background: #1a2340;
+  color: white;
+  text-align: center;
+  padding: 28px 24px;
+}
+
+.page-header h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.page-header p {
+  margin: 0;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+/* ===== BODY ===== */
+.page-body {
+  padding: 24px;
+}
+
+/* ===== GRID MENU ===== */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border: 1px solid #e8eaf0;
+  border-radius: 12px;
+  padding: 16px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.menu-item:hover {
+  border-color: #1a2340;
+  box-shadow: 0 4px 12px rgba(26,35,64,0.12);
+  transform: translateY(-2px);
+}
+
+/* Icônes colorées */
+.menu-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #1a2340;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.deposit-icon  { background: #1a2340; }
+.transfer-icon { background: #1a2340; }
+.history-icon  { background: #1a2340; }
+.cheque-icon   { background: #1a2340; }
+
+/* Texte menu */
+.menu-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-text strong {
+  font-size: 14px;
+  color: #1a2340;
+  font-weight: 600;
+}
+
+.menu-text span {
+  font-size: 11px;
+  color: #9ba3b8;
+  margin-top: 2px;
+}
+
+/* Chéquier prend toute la largeur */
+.menu-item:last-child {
+  grid-column: 1 / -1;
+}
+
+/* ===== BOUTON TERMINER SESSION ===== */
+/* ✅ Style exactement comme l'image 4 : fond rose/rouge clair, texte rouge, icône rouge */
+.btn-logout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #fff0f0;
+  color: #e53e3e;
+  border: 1.5px solid #fcc;
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 4px;
+}
+
+.btn-logout:hover {
+  background: #ffe0e0;
+  border-color: #e53e3e;
+  box-shadow: 0 2px 8px rgba(229,62,62,0.2);
+}
+
+.btn-logout i {
+  font-size: 16px;
+}

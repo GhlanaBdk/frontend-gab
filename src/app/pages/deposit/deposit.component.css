@@ -1,0 +1,299 @@
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f2f5;
+  padding: 20px;
+}
+
+.page-card {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+
+.page-header {
+  background-color: #1a2e4a;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: white;
+}
+
+.page-header i { font-size: 24px; }
+
+.page-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.page-body { padding: 20px 24px; }
+
+.instruction {
+  font-size: 12px;
+  color: #e8703a;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.billets-list {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.billet-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+
+.billet-row:last-child { border-bottom: none; }
+.billet-row:hover { background: #f8f9fa; }
+
+.billet-img-box {
+  position: relative;
+  width: 70px;
+  height: 42px;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #eee;
+}
+
+.billet-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.billet-tag {
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.billet-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.billet-info strong {
+  font-size: 13px;
+  color: #1a2e4a;
+  font-weight: 700;
+}
+
+.billet-info span {
+  font-size: 11px;
+  color: #888;
+}
+
+.billet-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-ctrl {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid #e0e0e0;
+  background: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.btn-ctrl:hover { border-color: #1a2e4a; color: #1a2e4a; }
+.btn-ctrl.plus:hover { background: #1a2e4a; color: white; }
+
+.billet-qty {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a2e4a;
+  min-width: 20px;
+  text-align: center;
+}
+
+.billet-subtotal {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a2e4a;
+  min-width: 60px;
+  text-align: right;
+}
+
+.total-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f0f4ff;
+  border: 1.5px solid #1a2e4a;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+}
+
+.total-box span { font-size: 13px; color: #555; }
+.total-box strong { font-size: 18px; color: #1a2e4a; }
+
+.alert-error {
+  background: #fff0f0;
+  color: #d9534f;
+  border: 1px solid #f5c6c6;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.alert-success {
+  background: #f0fff4;
+  color: #28a745;
+  border: 1px solid #c0ecd0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.page-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn-retour {
+  background: white;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #888;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-retour:hover { border-color: #1a2e4a; color: #1a2e4a; }
+
+.btn-valider {
+  background-color: #1a2e4a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+/* ===== AJOUTE CE CSS dans withdraw/deposit/transfer/chequebook .css ===== */
+
+/* Boîte qui apparaît après succès avec le bouton PDF */
+.ticket-box {
+  background: #f8fff9;
+  border: 2px solid #28a745;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.ticket-box > i.bi-receipt {
+  font-size: 40px;
+  color: #28a745;
+}
+
+.ticket-info strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a2e4a;
+  margin-bottom: 4px;
+}
+
+.ticket-info span {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Bouton télécharger PDF — rouge comme un vrai ticket */
+.btn-ticket {
+  background: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-ticket:hover { background: #b71c1c; }
+
+.btn-ticket i { font-size: 16px; }
+
+
+/* ===== AJOUTE CE CSS dans admin-transactions.component.css ===== */
+
+/* Bouton Export PDF dans l'en-tête */
+.btn-export {
+  background: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.btn-export:hover { background: #b71c1c; }
+.btn-export:disabled { background: #bbb; cursor: not-allowed; }

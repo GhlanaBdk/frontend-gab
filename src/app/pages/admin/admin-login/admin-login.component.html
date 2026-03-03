@@ -1,0 +1,45 @@
+<div class="admin-login-wrapper">
+  <div class="admin-login-card">
+
+    <div class="admin-login-header">
+      <div class="admin-icon">
+        <i class="bi bi-shield-lock"></i>
+      </div>
+      <h2>Administration GAB</h2>
+      <p>Accès réservé aux administrateurs</p>
+    </div>
+
+    <div class="admin-login-body">
+
+      <div class="field-group">
+        <label>Nom d'utilisateur</label>
+        <div class="input-box">
+          <i class="bi bi-person"></i>
+          <input type="text" [(ngModel)]="username"
+                 placeholder="admin"/>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label>Mot de passe</label>
+        <div class="input-box">
+          <i class="bi bi-lock"></i>
+          <input type="password" [(ngModel)]="password"
+                 placeholder="••••••••"/>
+        </div>
+      </div>
+
+      @if (error) {
+        <div class="alert-error">
+          <i class="bi bi-exclamation-circle"></i> {{ error }}
+        </div>
+      }
+
+      <button class="btn-login" (click)="login()" [disabled]="loading">
+        @if (loading) { <span>Connexion...</span> }
+        @else { <span><i class="bi bi-box-arrow-in-right"></i> Se connecter</span> }
+      </button>
+
+    </div>
+  </div>
+</div>

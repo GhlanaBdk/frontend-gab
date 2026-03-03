@@ -1,0 +1,60 @@
+<!-- ===== transfer.component.html ===== -->
+<div class="page-wrapper">
+  <div class="page-card">
+    <div class="page-header">
+      <i class="bi bi-arrow-left-right"></i>
+      <h2>Opération de virement</h2>
+    </div>
+    <div class="page-body">
+      @if (error) { <div class="alert-error"><i class="bi bi-exclamation-circle"></i> {{ error }}</div> }
+      @if (success) { <div class="alert-success"><i class="bi bi-check-circle"></i> {{ success }}</div> }
+
+      @if (operationReussie) {
+        <div class="ticket-box">
+          <i class="bi bi-receipt"></i>
+          <div class="ticket-info">
+            <strong>Virement effectué !</strong>
+            <span>Voulez-vous télécharger votre ticket ?</span>
+          </div>
+          <button class="btn-ticket" (click)="telechargerTicket()">
+            <i class="bi bi-file-earmark-pdf"></i> Télécharger le ticket PDF
+          </button>
+          <button class="btn-retour" (click)="retour()">
+            <i class="bi bi-arrow-left"></i> Retour au menu
+          </button>
+        </div>
+      }
+
+      @if (!operationReussie) {
+        <div class="field-group">
+          <label><i class="bi bi-person-lines-fill"></i> RIB du bénéficiaire</label>
+          <div class="input-box">
+            <i class="bi bi-bank input-icon"></i>
+            <input type="text" [(ngModel)]="beneficiaryRib" placeholder="Ex: RIB002"/>
+          </div>
+        </div>
+        <div class="field-group">
+          <label><i class="bi bi-cash-coin"></i> Montant à virer (UM)</label>
+          <div class="input-box">
+            <span class="currency">UM</span>
+            <input type="number" [(ngModel)]="amount" placeholder="0" min="0"/>
+          </div>
+        </div>
+        <div class="quick-amounts">
+          <label>Montants rapides :</label>
+          <div class="quick-buttons">
+            @for (q of quickAmounts; track q) {
+              <button class="btn-quick" [class.active]="amount === q" (click)="selectAmount(q)">{{ q }} UM</button>
+            }
+          </div>
+        </div>
+        <div class="page-actions">
+          <button class="btn-retour" (click)="retour()"><i class="bi bi-arrow-left"></i> Retour au menu</button>
+          <button class="btn-valider" (click)="valider()" [disabled]="loading">
+            @if (loading) { <span>Traitement...</span> } @else { <span>Valider le virement</span> }
+          </button>
+        </div>
+      }
+    </div>
+  </div>
+</div>

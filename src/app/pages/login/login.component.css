@@ -1,0 +1,150 @@
+/* ===== WRAPPER ===== */
+.login-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a2340 0%, #1e3a5f 50%, #1a2340 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Calibri, sans-serif;
+}
+
+/* ===== CARTE ===== */
+.login-card {
+  background: white;
+  border-radius: 16px;
+  padding: 36px 40px 28px;
+  width: 420px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.login-icon {
+  text-align: center;
+  font-size: 42px;
+  color: #1a2340;
+  margin-bottom: 8px;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a2340;
+  margin-bottom: 4px;
+}
+
+.login-subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 24px;
+}
+
+/* ===== FORMULAIRE ===== */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #dde3f0;
+  border-radius: 10px;
+  padding: 0 14px;
+  background: #f8f9fc;
+  transition: border-color 0.2s;
+}
+
+.input-box:focus-within {
+  border-color: #1a2340;
+  background: white;
+}
+
+.input-box > i {
+  color: #aab;
+  font-size: 16px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.input-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 12px 0;
+  font-size: 15px;
+  width: 100%;
+  color: #1a2340;
+  letter-spacing: 1px;
+}
+
+/* ✅ SELECT GAB — même style que les inputs */
+.input-box select {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 12px 0;
+  font-size: 14px;
+  width: 100%;
+  color: #1a2340;
+  font-weight: 600;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.input-box select option {
+  font-weight: normal;
+  color: #333;
+}
+
+/* ===== ERREUR ===== */
+.error-msg {
+  background: #fff0f0;
+  color: #d9534f;
+  border: 1px solid #f5c6c6;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== BOUTON ===== */
+.btn-valider {
+  width: 100%;
+  background: #1a2340;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 16px;
+}
+
+.btn-valider:hover:not(:disabled) { background: #243d63; }
+.btn-valider:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ===== NOTE SÉCURITÉ ===== */
+.secure-note {
+  text-align: center;
+  font-size: 11px;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}

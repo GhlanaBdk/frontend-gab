@@ -1,0 +1,69 @@
+<div class="page-wrapper">
+  <div class="page-card">
+    <div class="page-header">
+      <i class="bi bi-journal-text"></i>
+      <h2>Demande de chéquier</h2>
+    </div>
+    <div class="page-body">
+      @if (error) {
+        <div class="alert-error"><i class="bi bi-exclamation-circle"></i> {{ error }}</div>
+      }
+      @if (success) {
+        <div class="alert-success"><i class="bi bi-check-circle"></i> {{ success }}</div>
+      }
+
+      @if (operationReussie) {
+        <div class="ticket-box">
+          <i class="bi bi-receipt"></i>
+          <div class="ticket-info">
+            <strong>Demande envoyée !</strong>
+            <span>Voulez-vous télécharger votre ticket de confirmation ?</span>
+          </div>
+          <button class="btn-ticket" (click)="telechargerTicket()">
+            <i class="bi bi-file-earmark-pdf"></i> Télécharger le ticket PDF
+          </button>
+          <button class="btn-retour" (click)="retour()">
+            <i class="bi bi-arrow-left"></i> Retour au menu
+          </button>
+        </div>
+      }
+
+      @if (!operationReussie) {
+        <p class="section-label">Choisissez le type de chéquier :</p>
+        <div class="types-list">
+          @for (type of types; track type.code) {
+            <div class="type-item" [class.selected]="selectedType === type.code" (click)="select(type.code)">
+              <div class="type-radio">
+                <div class="radio-inner" [class.active]="selectedType === type.code"></div>
+              </div>
+              <div class="type-info">
+                <div class="type-title">
+                  <strong>{{ type.label }}</strong>
+                  @if (type.recommended) { <span class="badge-recommended">Recommandé</span> }
+                </div>
+                <span class="type-desc">{{ type.description }}</span>
+              </div>
+              <i class="bi bi-file-text type-icon"></i>
+            </div>
+          }
+        </div>
+        <div class="info-box">
+          <p><strong>Informations de livraison :</strong></p>
+          <ul>
+            <li>Délai de disponibilité : 5 à 7 jours ouvrables</li>
+            <li>Retrait uniquement en agence</li>
+            <li>Une pièce d'identité vous sera demandée</li>
+            <li>Service gratuit</li>
+          </ul>
+        </div>
+        <div class="page-actions">
+          <button class="btn-retour" (click)="retour()"><i class="bi bi-arrow-left"></i> Retour au menu</button>
+          <button class="btn-valider" (click)="valider()" [disabled]="!selectedType || loading">
+            @if (loading) { <span>Traitement...</span> } @else { <span>Valider la demande</span> }
+          </button>
+        </div>
+      }
+
+    </div>
+  </div>
+</div>

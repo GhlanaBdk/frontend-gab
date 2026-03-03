@@ -1,0 +1,164 @@
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f2f5;
+  padding: 20px;
+}
+
+.page-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+
+.page-header {
+  background-color: #1a2e4a;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: white;
+}
+
+.page-header i { font-size: 24px; }
+
+.page-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.page-body { padding: 20px 24px; }
+
+.info-badge {
+  background: #f0f4ff;
+  border: 1px solid #d0d8f0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.transactions-list {
+  margin-bottom: 16px;
+}
+
+.tx-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: #fff5f5;
+  border: 1px solid #ffe0e0;
+  transition: all 0.2s;
+}
+
+.tx-row.credit {
+  background: #f0fff4;
+  border-color: #c0ecd0;
+}
+
+.tx-row:hover { transform: translateX(2px); }
+
+.tx-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: #d9534f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tx-icon.credit-icon {
+  background-color: #28a745;
+}
+
+.tx-icon i {
+  font-size: 16px;
+  color: white;
+}
+
+.tx-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tx-info strong {
+  font-size: 13px;
+  color: #1a2e4a;
+  font-weight: 600;
+}
+
+.tx-info span {
+  font-size: 11px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.tx-amount {
+  font-size: 14px;
+  font-weight: 700;
+  color: #d9534f;
+}
+
+.tx-amount.credit-amount {
+  color: #28a745;
+}
+
+.solde-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.solde-box span {
+  font-size: 13px;
+  color: #555;
+}
+
+.solde-box strong {
+  font-size: 16px;
+  color: #1a2e4a;
+  font-weight: 700;
+}
+
+.btn-retour {
+  background: white;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #888;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-retour:hover {
+  border-color: #1a2e4a;
+  color: #1a2e4a;
+}

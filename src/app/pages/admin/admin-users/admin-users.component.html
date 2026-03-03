@@ -1,0 +1,129 @@
+<div class="admin-wrapper">
+
+  <div class="admin-sidebar">
+    <div class="sidebar-header">
+      <i class="bi bi-shield-lock"></i>
+      <span>Admin GAB</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a (click)="goTo('dashboard')" class="nav-item">
+        <i class="bi bi-speedometer2"></i> Dashboard
+      </a>
+      <a (click)="goTo('users')" class="nav-item active">
+        <i class="bi bi-people"></i> Utilisateurs
+      </a>
+      <a (click)="goTo('accounts')" class="nav-item">
+        <i class="bi bi-wallet2"></i> Comptes
+      </a>
+      <a (click)="goTo('cards')" class="nav-item">
+        <i class="bi bi-credit-card"></i> Cartes
+      </a>
+      <a (click)="goTo('transactions')" class="nav-item">
+        <i class="bi bi-arrow-left-right"></i> Transactions
+      </a>
+      <a (click)="goTo('chequebook')" class="nav-item">
+        <i class="bi bi-journal-text"></i> Chéquiers
+      </a>
+      <a (click)="goTo('gabs')" class="nav-item">
+        <i class="bi bi-building"></i> GABs
+      </a>
+    </nav>
+    <button class="btn-logout" (click)="logout()">
+      <i class="bi bi-box-arrow-left"></i> Déconnexion
+    </button>
+  </div>
+
+  <div class="admin-content">
+    <div class="content-header">
+      <div>
+        <h1>Utilisateurs</h1>
+        <p>Gérer les clients du système GAB</p>
+      </div>
+      <button class="btn-add" (click)="toggleForm()">
+        <i class="bi bi-plus-lg"></i> Nouvel utilisateur
+      </button>
+    </div>
+
+    @if (showForm) {
+      <div class="form-card">
+        <h3>Créer un nouvel utilisateur</h3>
+
+        @if (error) {
+          <div class="alert-error">
+            <i class="bi bi-exclamation-circle"></i> {{ error }}
+          </div>
+        }
+
+        @if (success) {
+          <div class="alert-success">
+            <i class="bi bi-check-circle"></i> {{ success }}
+          </div>
+        }
+
+        <div class="form-grid">
+          <div class="field-group">
+            <label>Nom complet *</label>
+            <input type="text" [(ngModel)]="newUser.fullName"
+                   placeholder="Ahmed Mohamed"/>
+          </div>
+          <div class="field-group">
+            <label>Email</label>
+            <input type="email" [(ngModel)]="newUser.email"
+                   placeholder="ahmed@email.com"/>
+          </div>
+          <div class="field-group">
+            <label>Téléphone</label>
+            <input type="text" [(ngModel)]="newUser.phone"
+                   placeholder="+222 XX XX XX XX"/>
+          </div>
+          <div class="field-group">
+            <label>Solde initial (UM)</label>
+            <input type="number" [(ngModel)]="newUser.initialBalance"
+                   placeholder="0"/>
+          </div>
+          <div class="field-group">
+            <label>PIN (4 chiffres) *</label>
+            <input type="password" [(ngModel)]="newUser.pin"
+                   placeholder="••••" maxlength="4"/>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-cancel" (click)="toggleForm()">Annuler</button>
+          <button class="btn-save" (click)="createUser()">
+            <i class="bi bi-check-lg"></i> Créer
+          </button>
+        </div>
+      </div>
+    }
+
+    @if (loading) {
+      <div class="loading">Chargement...</div>
+    } @else {
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nom complet</th>
+              <th>Email</th>
+              <th>Téléphone</th>
+              <th>Date création</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (user of users; track user.id) {
+              <tr>
+                <td><span class="badge-id">#{{ user.id }}</span></td>
+                <td><strong>{{ user.fullName }}</strong></td>
+                <td>{{ user.email || '—' }}</td>
+                <td>{{ user.phone || '—' }}</td>
+                <td>{{ user.createdAt | date:'dd/MM/yyyy' }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    }
+  </div>
+</div>

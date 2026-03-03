@@ -1,0 +1,39 @@
+.admin-wrapper { display: flex; min-height: 100vh; background: #f0f2f5; }
+.admin-sidebar { width: 240px; background: #1a2e4a; display: flex; flex-direction: column; flex-shrink: 0; position: fixed; height: 100vh; overflow-y: auto; }
+.sidebar-header { padding: 24px 20px; color: white; font-size: 16px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px; }
+.sidebar-header i { font-size: 20px; }
+.sidebar-nav { flex: 1; padding: 16px 0; }
+.nav-item { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: #a0b4cc; font-size: 14px; cursor: pointer; transition: all 0.2s; text-decoration: none; }
+.nav-item:hover { background: rgba(255,255,255,0.08); color: white; }
+.nav-item.active { background: rgba(255,255,255,0.12); color: white; border-left: 3px solid #e8703a; }
+.nav-item i { font-size: 16px; width: 20px; }
+.btn-logout { background: none; border: none; border-top: 1px solid rgba(255,255,255,0.1); padding: 16px 20px; color: #a0b4cc; font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 10px; width: 100%; transition: color 0.2s; }
+.btn-logout:hover { color: #e8703a; }
+.admin-content { margin-left: 240px; flex: 1; padding: 32px; }
+.content-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+.content-header h1 { font-size: 24px; font-weight: 700; color: #1a2e4a; margin-bottom: 4px; }
+.content-header p { color: #888; font-size: 14px; }
+.btn-add { background: #1a2e4a; color: white; border: none; border-radius: 8px; padding: 10px 20px; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.2s; }
+.btn-add:hover { background: #243d63; }
+.form-card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.form-card h3 { font-size: 16px; font-weight: 700; color: #1a2e4a; margin-bottom: 20px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.field-group label { display: block; font-size: 13px; font-weight: 600; color: #555; margin-bottom: 6px; }
+.field-group input { width: 100%; border: 1.5px solid #e0e0e0; border-radius: 8px; padding: 10px 14px; font-size: 14px; outline: none; box-sizing: border-box; transition: border-color 0.2s; }
+.field-group input:focus { border-color: #1a2e4a; }
+.form-actions { display: flex; gap: 12px; justify-content: flex-end; }
+.btn-cancel { background: white; border: 1.5px solid #e0e0e0; border-radius: 8px; padding: 10px 20px; font-size: 13px; cursor: pointer; color: #888; }
+.btn-save { background: #1a2e4a; color: white; border: none; border-radius: 8px; padding: 10px 20px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+.btn-save:hover { background: #243d63; }
+.loading { text-align: center; color: #888; padding: 40px; }
+.gabs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+.gab-card { background: white; border-radius: 14px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 18px; position: relative; transition: box-shadow 0.2s; }
+.gab-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.gab-icon { width: 56px; height: 56px; background: #e8edf5; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 26px; color: #1a2e4a; flex-shrink: 0; }
+.gab-info { flex: 1; }
+.gab-info h3 { font-size: 17px; font-weight: 700; color: #1a2e4a; margin-bottom: 5px; }
+.gab-info p { font-size: 13px; color: #666; display: flex; align-items: center; gap: 4px; margin-bottom: 3px; }
+.gab-id { font-size: 11px; color: #aaa; }
+.gab-badge { position: absolute; top: 16px; right: 16px; background: #e8f5e9; color: #28a745; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+.alert-error { background: #fff0f0; color: #d9534f; border: 1px solid #f5c6c6; border-radius: 8px; padding: 10px 14px; font-size: 13px; margin-bottom: 16px; }
+.alert-success { background: #f0fff4; color: #28a745; border: 1px solid #c0ecd0; border-radius: 8px; padding: 10px 14px; font-size: 13px; margin-bottom: 16px; }
